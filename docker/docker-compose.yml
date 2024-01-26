@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  database:
+    image: mongo:4.2.9
+    container_name: lepatron_mongo_container
+    environment:
+      MONGO_INITDB_DATABASE: lepatron
+      # MONGO_INITDB_ROOT_PASSWORD: user
+      # MONGO_INITDB_ROOT_USERNAME: password
+    ports:
+      - '27017-27019:27017-27019'
+    volumes:
+      - db:/data/db
+
+volumes:
+  db:
